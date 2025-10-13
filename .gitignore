@@ -12,3 +12,9 @@ __pycache__/
 db.sqlite3
 
 /bloodbank/media/
+echo "/bloodbank/media/" >> .gitignore
+git add .gitignore
+
+# Virtual environments
+venv/
+env/
