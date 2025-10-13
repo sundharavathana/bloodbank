@@ -1,7 +1,0 @@
-account sid==REMOVED
-auth token==REMOVED
-recovery code==REMOVED
-twilio login mail id==REMOVED
-login password==REMOVED
-twilio phn number==REMOVED
-- blob id==REMOVED
