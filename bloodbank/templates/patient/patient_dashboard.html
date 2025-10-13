@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="row pdash">
+<div class="container d-flex flex-column align-items-center col-md-5 col-8 mt-5">
+    <h2 style="color:blue">Welcome, {{ patient.name|title }}</h2>
+    <h4>Your blood request details:</h4>
+    <ul>
+        <li>Age: {{ patient.age }}</li>
+        <li>Gender: {{ patient.gender }}</li>
+        <li>Blood Group: {{ patient.bloodgroup }}{{ patient.rhoptions }}</li>
+        <li>Units Needed: {{ patient.unit }}</li>
+        <li>Hospital: {{ patient.hospital }}</li>
+        <li>City: {{ patient.location }}</li>
+    </ul>
+
+    <hr>
+
+    <h4>Donors who donated to you:</h4>
+    {% if donors %}
+    <div class="donorupdate col-8 col-md-5">
+        <div>
+        {% for donor in donors %}
+            <img src="{{donor.image.url}}" style="max-width:250px; max-height:200px; width:250px; height:200px; object-fit:cover;" 
+                 class="img-fluid rounded mt-2"> 
+            <h3>{{ donor.username }}</h3> 
+            <h3>({{ donor.unit }} units)</h3>
+        {% endfor %}
+       </div>
+    {% else %}
+        <p>No donors have donated yet.</p>
+    {% endif %}
+    </div>
+</div>
+</div>
+{% endblock %}

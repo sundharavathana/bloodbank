@@ -1,0 +1,24 @@
+.loginform{
+   color: var(--card-bg);
+}
+.logindiv{
+    /* background-color: aquamarine; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.loginsubdiv2{
+    padding:30px 30px;
+    background-color: var(--highlight-color);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 1rem var(--highlight-color);
+}
+.loginbtn{
+    background: var(--gradient-white-aqua);
+    color: var(--text-color);
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 30px;
+}

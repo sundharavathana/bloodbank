@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+  <div class="success-page">
+    <div class="checkmark-container">
+      <div class="checkmark"></div>
+    </div>
+    <h1>Successfully submitted{% if patient_name %} for {{ patient_name }}{% endif %}</h1>
+    <a href="{% url 'bloodbankapp:donordetails' %}" class="back-btn">Go Back</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+
+
+
+.navbar{
+   background-image: var(--gradient-white-aqua)!important;
+   padding-top: 20px;
+   padding-bottom: 20px;
+
+ }
+.nav-brand{
+  font-size: 1.7rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: var(--highlight-color);
+ }
+.navbar-nav .nav-item .nav-link{
+     color:var(--highlight-color);
+     font-weight: bolder;
+     font-size: 1.4rem;
+ }
+
+.logo{
+    width:60px;
+    height:60px;
+ }
+.navbar-nav{
+
+  display: flex;
+  gap:15px;
+ }
+
+ 
+
+
+ .navbar-nav .nav-item .nav-link:hover{
+   font-size: 1.5rem;
+   color: var(--highlight-color);
+
+ }
+
+
+ 
+ 
+
+
+ 

@@ -1,0 +1,6 @@
+account sid:ACd6ccdb32d3eaeaf33cf200b7542eab80
+auth token:08b683e5fdbca83693eda211fd0ec5a3
+recovery code:CCHKZZ2N5M58S4EELDDGXTLW
+twilio login mail id:sundharavathana.fsdev@gmail.com
+login password:SundharaV@0608
+twilio phn number:+17652221888

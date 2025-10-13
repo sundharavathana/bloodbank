@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="container-fluid  blue">
+    <div class="row">
+        <h2 class="subheading">Patient's Details</h2>
+    </div>
+
+    <div class="row m-3">
+        {% for d in data %}
+        <div class="col-md-4 col-12 mb-4 pdata">
+            <div class="card pcard">
+                <div class="card-body">
+                    <div class="row">
+                       
+
+                        <div class="content col-md-8">
+                            <p>Name: {{ d.name }}</p>
+                            <p>Age: {{ d.age }}</p>
+                            <p>Gender: {{ d.gender }}</p>
+                            <p>Bloodgroup: {{ d.bloodgroup }}{{ d.rhoptions }}</p>
+                            <p>Unit: {{ d.unit }}</p>
+                            <p>Hospital: {{ d.hospital }}</p>
+                            <p>Location: {{ d.location }}</p>
+                            <pclass="message">Message: {{ d.ifany }}</p>
+
+                            <div>
+                               <a href="#" class="btn btn-primary" 
+   data-bs-toggle="modal" 
+   data-bs-target="#donateModal"
+   data-patient-id="{{ d.id }}"
+   data-patient-name="{{ d.name }}">
+   Donate
+</a>
+
+                                {% include 'includes/modal.html' with patient_name=d.name patient_id=d.id %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

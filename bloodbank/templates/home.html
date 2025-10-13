@@ -1,0 +1,98 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+  
+   <div class="homebody">
+    <h1 class="d-flex justify-content-center mt-5">donate blood save life</h1>
+   
+      {% for item in items %}
+      <div class="row justify-content-center my-5 homerow">
+      <div class="card col-md-4 col-8 homecard">
+         <div class="card-body d-flex flex-column align-items-center gap-4 homecardbody">
+            <h3 class="card-text homecardtext">{{item.title}}</h3>
+            <a href="{{item.link}}" class="btn btn-primary homebtn">{{item.btn}}</a>
+         </div>
+       </div>
+      </div>
+      {% endfor%}
+   
+   <div class="homecontent  container-fluid row">
+      <div class="col-10 col-md-4 donateimgdiv">
+         <img src="{% static 'images/vol.jpg' %}" class="img-fluid donate">
+      </div>
+      <div class="col-md-6 col-10 textcont">
+          <h1 class="subheading">TEN REASON TO DONATE BLOOD</h1>
+          <ol class="odlist">
+            <li class="reason"> <span class="title">Saves Lives:</span> One donation can save up to three lives, making it a direct way to help others.</li>
+         <li class="reason">
+<span class="title">Supports Medical Treatments:</span> Essential for surgeries, trauma care, cancer treatment, and chronic illness management.
+</li>
+<li class="reason">
+<span class="title">Maintains Blood Supply:</span> Ensures hospitals and clinics have sufficient blood for emergencies.
+</li>
+<li class="reason">
+<span class="title">Promotes Health Benefits for Donors:</span> Can reduce harmful iron levels, improve cardiovascular health, and stimulate blood cell production.
+</li>
+<li class="reason">
+<span class="title">Encourages Community Spirit:</span> Strengthens social responsibility and empathy toward others.
+</li>
+<li class="reason">
+<span class="title">Emergency Preparedness:</span> Helps prepare hospitals for disasters, accidents, or sudden blood shortages.
+</li>
+<li class="reason">
+<span class="title">Improves Blood Flow:</span> Donation can help improve circulation and overall blood health.
+</li>
+<li class="reason">
+<span class="title">Supports Research:</span> Donated blood can be used for medical research and developing new treatments.
+</li>
+<li class="reason">
+<span class="title">No Cost to Recipients:</span> Blood donation is a free, life-saving gift that requires no payment.
+</li>
+<li class="reason">
+<span class="title">Raises Awareness:</span> Promotes public awareness about health, wellness, and the importance of voluntary service.
+</li>
+
+          </ol>
+      </div> 
+     
+   </div>
+ <div class="homelast">
+   <div class="container ">
+    
+    <div class="container text-center mt-5 mb-4 compatibility">
+  <h2 class="fw-bold">UNDERSTAND BLOOD COMPATIBILITY</h2>
+  <p class="text-muted mx-auto pt-3" style="max-width: 700px; font-size:larger">
+    Blood compatibility is crucial for safe transfusions. Each blood type can donate to and receive from specific groups based on the presence of antigens and antibodies.  
+    Click on any blood group below to view its <strong>donation and receiving compatibility</strong>.
+  </p>
+</div>
+  <div class="row g-md-3 g-0 lastcont"> 
+
+{% for d in data %}
+<div class="col-md-3  col-6 acc">
+  <div class="accordion" id="accordion{{ forloop.counter }}">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+        <button class="accordion-button p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+          <img src="{% static d.img %}" alt="alt" class="img-fluid bld rounded-circle">
+        </button>
+      </h2>
+      <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordion{{ forloop.counter }}">
+        <div class="accordion-body ">
+          <strong class="accbox"> Donate To:</strong><br> <span class="para">{{ d.donate }}</span><br>
+          <strong class="accbox2"> Receive From:</strong><br><span class="para"> {{ d.receive }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+   
+  </div>
+</div>
+
+</div> 
+   </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bloodbank</title>
+    <link rel="stylesheet" href="{% static 'CSS/profile.css' %}">
+   
+</head>
+<body>
+ <!-------header-->
+    {% include 'includes/dashboardnav.html' %}
+   
+    <!---dynamic content---->
+    <main>
+      {% block content %}
+      
+      {% endblock %}
+    </main>
+    
+    <!--------footer-------->
+   {% include 'includes/footer.html' %}
+
+   
+</body>
+</html>

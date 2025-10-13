@@ -1,0 +1,86 @@
+<!-- includes/modal.html -->
+<div class="modal fade" id="donateModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+     
+        <div class="modal-header">
+          <h5 class="modal-title">Donate for <span id="modalPatientName">...</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+           <form method="post" enctype="multipart/form-data" action="{% url 'bloodbankapp:donordetails' %}">
+               {% csrf_token %}
+          <!-- Hidden field to carry patient id -->
+          <input type="hidden" name="patient_id" id="modalPatientId">
+
+          <!-- Donor fields -->
+          <div class="mb-2">
+            <label for="username" class="form-label">Name</label>
+            <input id="username" name="username" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="age" class="form-label">Age</label>
+            <input id="age" name="age" type="number" class="form-control" required>
+          </div>
+
+          <label class="form-label">Gender</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="M" required>
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="F">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label">Bloodgroup</label>
+            <input name="bloodgroup" style="width:60px" required>
+            <select name="rhoptions" required>
+              <option value="">RH</option>
+              <option value="+">+</option>
+              <option value="-">-</option>
+            </select>
+          </div>
+
+          <div class="mb-2">
+            <label for="unit" class="form-label">Unit</label>
+            <input id="unit" name="unit" type="number" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="location" class="form-label">City</label>
+            <input id="location" name="location" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="idproof" class="form-label">ID proof</label>
+            <input id="idproof" name="idproof" type="file" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="mc" class="form-label">Medical certificate</label>
+            <input id="mc" name="mc" type="file" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="image" class="form-label">Attach image</label>
+            <input id="image" name="image" type="file" class="form-control" required>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="volunteer" name="volunteer" required>
+            <label class="form-check-label" for="volunteer">I am volunteered</label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

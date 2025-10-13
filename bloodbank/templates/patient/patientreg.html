@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center mt-5 loginsubdiv1">
+        <div class="col-md-4 col-12 loginsubdiv2">
+            <h3 class="subheading">Register</h3>
+           {% if error %}
+          <div style="color: red;">
+             {{ error }}
+           </div>
+        {% endif %}
+            <div class=" my-3 loginform">
+                <form method="post" >
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="username" name="p_name" autocomplete="off">
+                    </div>
+              <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="p_email" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="p_password" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_pass" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm_pass" name="confirm_pass" autocomplete="off">
+                    </div>
+
+                    
+                    <div class="my-3 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary loginbtn">Register</button>
+                    </div>
+                    <div  class="my-3 d-flex justify-content-center">
+                        <a href="{% url 'bloodbankapp:p_login' %}" style="color:white"> Already have an account?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

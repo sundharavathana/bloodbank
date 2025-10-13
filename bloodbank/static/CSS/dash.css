@@ -1,0 +1,11 @@
+/* 
+.pcard{
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.blue{
+   
+    min-height: 100vh;
+}

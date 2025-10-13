@@ -1,0 +1,85 @@
+
+
+
+.navbar{
+   background-image: var(--gradient-white-aqua)!important;
+   padding-top: 20px;
+   padding-bottom: 20px;
+
+ }
+.nav-brand{
+  font-size: 1.7rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: var(--highlight-color);
+ }
+.navbar-nav .nav-item .nav-link{
+     color:var(--highlight-color);
+     font-weight: bolder;
+     font-size: 1.4rem;
+ }
+
+.logo{
+    width:60px;
+    height:60px;
+ }
+.navbar-nav{
+
+  display: flex;
+  gap:15px;
+ }
+
+ 
+
+
+ .navbar-nav .nav-item .nav-link:hover{
+   font-size: 1.5rem;
+   color: var(--highlight-color);
+
+ }
+
+
+ 
+ /*-------------footer------*/
+footer.ftr {
+    background: linear-gradient(to top, var(--text-color), rgba(255,255,255,0));
+    margin-top: -40px;         
+    padding-top: 60px;          
+    color: white;
+    text-align: center;
+    border-top: none;
+}
+
+.ftrbody {
+    background: transparent !important; /* so gradient shows */
+}
+
+.ftrspan {
+    font-weight: 500;
+    color:var(--card-bg);
+    letter-spacing: 1px;
+}
+
+
+
+@media (max-width:768px){
+  .nav-brand{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: var(--highlight-color);
+ }
+ 
+.logo{
+    width:55px;
+    height:55px;
+ }
+ .navbar-toggler{
+  background-image: none!important;
+  background-color: var(--highlight-color);
+}
+
+  .nav-item{
+    text-align: center;
+  }
+}

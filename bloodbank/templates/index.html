@@ -1,0 +1,41 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bloodbank</title>
+    <link rel="stylesheet" href="{% static 'CSS/homestyle.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/reg.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/dash.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/success.css' %}">
+
+
+
+
+    
+    
+</head>
+<body>
+
+    <!-------header---------->
+    {% include 'includes/header.html' %}
+   
+    <!---dynamic content---->
+    <main>
+      {% block content %}
+      
+      {% endblock %}
+    </main>
+    
+    <!--------footer-------->
+   {% include 'includes/footer.html' %}
+
+   <script src="{% static 'JS/eventhandler.js' %}"></script>
+</body>
+</html>

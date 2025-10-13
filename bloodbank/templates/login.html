@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container-fluid logindiv">
+    <div class="row d-flex justify-content-center  loginsubdiv1">
+        <div class="col-md-4 col-10 loginsubdiv2">
+            <h3 class="subheading mt-3">Login</h3><br>
+           {% if error %}
+          <div style="color: red;">
+             {{ error }}
+           </div>
+        {% endif %}
+            <div class=" my-3 loginform">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div><br>
+                    
+                    <div class="my-3 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary loginbtn">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

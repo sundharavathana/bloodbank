@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center mt-5">
+        <div class="col-4">
+            <h5>kindly fill this form</h5>  
+            <div class=" my-3">
+                <form method="post" >
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name" class="form-label"required >Patient's Name</label>
+                        <input type="text" class="form-control" id="name" name="name" autocomplete="off">
+                    </div>
+                     <div class="form-group">
+                        <label for="age" class="form-label"required >Age</label>
+                        <input type="number" class="form-control" id="age" name="age" autocomplete="off">
+                    </div>
+                    <div required >
+                    <label class="form-label">Gender</label>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="male" value="M" required autocomplete="off">
+        <label class="form-check-label" for="male">
+            Male
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="female" value="F">
+        <label class="form-check-label" for="female">
+            Female
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="other" value="O">
+        <label class="form-check-label" for="other">
+            Other
+        </label>
+    </div>
+</div>
+     <label for="blood-grp"> blood group</label>
+    <div class="input-group" required >
+    <input type="text" id="blood-grp" name="bloodgroup"  style="width:50px">
+    <select name="rhoptions">
+        <option value="">RH</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+    </select>
+   </div>
+     <div class="form-group">
+                        <label for="unit" class="form-label">Required unit</label>
+                        <input type="number" class="form-control" id="unit" name="unit"required  autocomplete="off">
+                    </div>
+        <div class="form-group">
+                        <label for="hospital" class="form-label">Hospital Name</label>
+                        <input type="text" class="form-control" id="hospital" name="hospital"required  autocomplete="off">
+                    </div>
+        <div class="form-group">
+                        <label for="location" class="form-label">Address</label>
+                        <input type="text-area" class="form-control" id="location" name="location"required  autocomplete="off">
+                    </div>
+                    
+                     <div class="form-group">
+                        <label for="ifany" class="form-label">if any(optional)</label>
+                        <input type="text-area" class="form-control" id="ifany" name="ifany" autocomplete="off">
+                    </div>
+                    <div class="my-3 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">submit</button>
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
